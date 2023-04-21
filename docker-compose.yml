@@ -6,4 +6,16 @@ services:
       context:  .
     restart: on-failure
     ports:
-      -  "8080:8080"
+      - "8080:8080"
+  db:
+    container_name: mysql
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_HOST: "%"
+    restart: on-failure
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+      - "33060:33060"
