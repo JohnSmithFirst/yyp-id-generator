@@ -11,11 +11,4 @@ import javax.sql.DataSource;
 @Configuration
 @RequiredArgsConstructor
 public class DatasourceConfiguration {
-    private final DataSource dataSource;
-
-    @PostConstruct
-    private void init(){
-        log.info("dataSource:{}",dataSource.getClass());
-    }
-
 }
