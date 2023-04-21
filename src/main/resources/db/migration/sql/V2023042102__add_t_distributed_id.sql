@@ -1,0 +1,1 @@
+INSERT INTO t_distributed_id (id_generator_name) VALUES ('第一个id生成器');
