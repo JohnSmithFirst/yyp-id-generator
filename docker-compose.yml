@@ -4,5 +4,6 @@ services:
     container_name:  app
     build:
       context:  .
+    restart: on-failure
     ports:
       -  "8080:8080"
