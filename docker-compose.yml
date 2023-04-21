@@ -13,6 +13,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: id_generator
     restart: on-failure
     volumes:
       - ./data/mysql:/var/lib/mysql
