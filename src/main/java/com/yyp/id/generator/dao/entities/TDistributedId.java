@@ -1,17 +1,22 @@
 package com.yyp.id.generator.dao.entities;
 
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * 分布式id表
+ *
  * @TableName t_distributed_id
  */
 @Data
 public class TDistributedId implements Serializable {
     /**
-     * 主键
+     * 主键 使用mysql的自增主键 以后使用自定义的id生成
      */
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
