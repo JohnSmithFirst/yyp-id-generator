@@ -9,18 +9,23 @@ public class IdGeneratorResult {
     /**
      * id初始值
      */
-    private AtomicLong beginId;
+    private final Long beginId;
+
+    private final AtomicLong currentId;
     /**
      * id结束值
      */
-    private long endId;
+    private final Long endId;
+    /**
+     * 步进
+     */
+    private final Long step;
 
     /**
-     *
      * @return 当前id的值 -1是已超过范围 需要重新从接口获取
      */
-    public Long currentId(){
-        long result = beginId.getAndIncrement();
+    public long currentId() {
+        long result = currentId.getAndIncrement();
         return result < endId ? result : -1;
     }
 

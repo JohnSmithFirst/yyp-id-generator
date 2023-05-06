@@ -17,4 +17,11 @@
         id,id_generator_name,id_generator_value,
         id_generator_value_step,version,id_delete
     </sql>
+    <update id="updateIdByEndId">
+        update t_distributed_id
+        set id_generator_value = id_generator_value + id_generator_value_step
+          , version            = version + 1
+        where id_generator_name = #{generator}
+          and id_generator_value = #{endId}
+    </update>
 </mapper>
