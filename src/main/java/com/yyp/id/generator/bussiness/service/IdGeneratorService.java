@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.yyp.id.generator.bussiness.dto.IdGeneratorResult;
 import com.yyp.id.generator.dao.entities.TDistributedId;
 import com.yyp.id.generator.dao.service.TDistributedIdService;
+import com.yyp.id.generator.tools.HumanIdGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ import java.util.concurrent.atomic.AtomicLong;
 public class IdGeneratorService {
 
     private final TDistributedIdService tDistributedIdService;
+
+    private HumanIdGenerator humanIdGenerator = new HumanIdGenerator();
 
     /**
      * 这里需要是线程安全的获取
@@ -49,6 +52,7 @@ public class IdGeneratorService {
                 })
                 .orElseGet(() -> {
                     TDistributedId entity = new TDistributedId();
+                    entity.setId(humanIdGenerator.acquireTimeLong());
                     entity.setIdGeneratorName(generator);
                     tDistributedIdService.save(entity);
                     entity = getDistributeIdFromDb(generator);

@@ -15,7 +15,7 @@ public class IdGeneratorServiceTest {
 
     @Test
     void test() {
-        String generator = "test6";
+        String generator = "test7";
         IdGeneratorResult result = null;
         for (int i = 0; i < 2; i++) {
             result = idGeneratorService.generateId(generator, result);
