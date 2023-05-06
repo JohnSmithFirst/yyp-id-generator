@@ -1,6 +1,6 @@
-package com.yyp.id.generator.service;
+package com.yyp.id.generator.dao.service;
 
-import com.yyp.id.generator.entities.TDistributedId;
+import com.yyp.id.generator.dao.entities.TDistributedId;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

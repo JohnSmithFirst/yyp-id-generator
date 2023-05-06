@@ -1,6 +1,6 @@
-package com.yyp.id.generator.mapper;
+package com.yyp.id.generator.dao.mapper;
 
-import com.yyp.id.generator.entities.TDistributedId;
+import com.yyp.id.generator.dao.entities.TDistributedId;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

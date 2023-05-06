@@ -1,4 +1,4 @@
-package com.yyp.id.generator.entities;
+package com.yyp.id.generator.dao.entities;
 
 import java.io.Serializable;
 import lombok.Data;

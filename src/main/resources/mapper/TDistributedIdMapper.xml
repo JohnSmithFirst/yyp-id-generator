@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yyp.id.generator.mapper.TDistributedIdMapper">
+<mapper namespace="com.yyp.id.generator.dao.mapper.TDistributedIdMapper">
 
-    <resultMap id="BaseResultMap" type="com.yyp.id.generator.entities.TDistributedId">
+    <resultMap id="BaseResultMap" type="com.yyp.id.generator.dao.entities.TDistributedId">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="idGeneratorName" column="id_generator_name" jdbcType="VARCHAR"/>
             <result property="idGeneratorValue" column="id_generator_value" jdbcType="BIGINT"/>
