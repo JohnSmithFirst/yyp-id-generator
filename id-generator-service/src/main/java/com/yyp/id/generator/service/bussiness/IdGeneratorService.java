@@ -1,9 +1,9 @@
-package com.yyp.id.generator.bussiness.service;
+package com.yyp.id.generator.service.bussiness;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.yyp.id.generator.bussiness.dto.IdGeneratorResult;
 import com.yyp.id.generator.dao.entities.TDistributedId;
-import com.yyp.id.generator.dao.service.TDistributedIdService;
+import com.yyp.id.generator.service.dao.TDistributedIdService;
 import com.yyp.id.generator.tools.HumanIdGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

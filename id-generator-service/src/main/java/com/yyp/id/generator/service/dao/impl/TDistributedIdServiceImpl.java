@@ -1,9 +1,9 @@
-package com.yyp.id.generator.dao.service.impl;
+package com.yyp.id.generator.service.dao.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yyp.id.generator.dao.entities.TDistributedId;
 import com.yyp.id.generator.dao.mapper.TDistributedIdMapper;
-import com.yyp.id.generator.dao.service.TDistributedIdService;
+import com.yyp.id.generator.service.dao.TDistributedIdService;
 import org.springframework.stereotype.Service;
 
 /**

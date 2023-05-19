@@ -36,11 +36,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.yyp</groupId>
-			<artifactId>id-generator-dao</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.yyp</groupId>
-			<artifactId>id-generator-facade</artifactId>
+			<artifactId>id-generator-service</artifactId>
 		</dependency>
 	</dependencies>
 

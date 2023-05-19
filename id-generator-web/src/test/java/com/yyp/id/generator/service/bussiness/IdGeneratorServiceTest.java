@@ -1,4 +1,4 @@
-package com.yyp.id.generator.bussiness.service;
+package com.yyp.id.generator.service.bussiness;
 
 import com.yyp.id.generator.bussiness.dto.IdGeneratorResult;
 import lombok.extern.slf4j.Slf4j;

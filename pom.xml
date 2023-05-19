@@ -16,6 +16,7 @@
     <modules>
         <module>./id-generator-dao</module>
         <module>./id-generator-facade</module>
+        <module>./id-generator-service</module>
         <module>./id-generator-web</module>
     </modules>
     <packaging>pom</packaging>
@@ -32,6 +33,11 @@
             <dependency>
                 <groupId>com.yyp</groupId>
                 <artifactId>id-generator-facade</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+             <dependency>
+                <groupId>com.yyp</groupId>
+                <artifactId>id-generator-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
