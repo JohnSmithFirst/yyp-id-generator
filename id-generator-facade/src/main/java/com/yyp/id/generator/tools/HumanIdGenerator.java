@@ -4,6 +4,8 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,13 +23,38 @@ public class HumanIdGenerator {
     /**
      * 实例编号 00到99 共100个 占用timeFormat倒数第四第五位 可做成配置项
      */
-    private final String maxInstancesNumber = "01";
-    private final String timeFormat = String.format("yyyyMMddHHmmss%s000", maxInstancesNumber);
+    private final String maxInstancesNumber;
+    private final String timeFormat;
+
+    private static final List<String> maxInstancesNumberIndexList;
 
     private final Map<String, IdGeneratorContainer> cache = new ConcurrentHashMap<>();
 
     private final Lock lock = new ReentrantLock();
 
+    static {
+        maxInstancesNumberIndexList = new ArrayList<>(128);
+        for (int i = 0; i < 100; i++) {
+            maxInstancesNumberIndexList.add(String.format("%02d",i));
+        }
+    }
+
+    public HumanIdGenerator() {
+        this.maxInstancesNumber = maxInstancesNumberIndexList.stream().findFirst().orElse("00");
+        this.timeFormat = String.format("yyyyMMddHHmmss%s000", maxInstancesNumber);
+    }
+
+    /**
+     * 有配置的构造函数
+     * @param instancesIndex 实例索引 0-99
+     */
+    public HumanIdGenerator(int instancesIndex) {
+        if (instancesIndex < 0 || instancesIndex > 99){
+            throw new RuntimeException("instancesIndex取值范围错误");
+        }
+        this.maxInstancesNumber = maxInstancesNumberIndexList.get(instancesIndex);
+        this.timeFormat = String.format("yyyyMMddHHmmss%s000", maxInstancesNumber);
+    }
 
     /**
      * 获取一个基于时间的id
