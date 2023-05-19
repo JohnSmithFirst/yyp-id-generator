@@ -8,7 +8,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>id-generator-dao</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>id-generator-dao</name>
 	<description>分布式id生成器dao</description>
 	<packaging>jar</packaging>

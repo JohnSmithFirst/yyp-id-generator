@@ -9,7 +9,6 @@
 	</parent>
 	<groupId>com.yyp</groupId>
 	<artifactId>id-generator-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>id-generator-web</name>
 	<description>分布式id生成器</description>
 	<dependencies>

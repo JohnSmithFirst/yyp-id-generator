@@ -8,7 +8,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>id-generator-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>id-generator-service</name>
 	<description>分布式id生成器service</description>
 	<packaging>jar</packaging>
